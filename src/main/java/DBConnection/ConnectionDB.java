@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DBConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -26,4 +23,15 @@ public class ConnectionDB {
         }
         return conn;
     }
+    public void createTables() throws SQLException{
+        Statement stmt = connDB().createStatement();
+        
+        String tableUsers = """
+                    CREATE TABLE IF NOT EXISTS cliente (
+                   id INT PRIMARY KEY NOT NULL, nome VARCHAR(120), cpf  VARCHAR(30) UNIQUE,
+                   email VARCHAR(100),sexo ENUM('M','F'), telefone VARCHAR(50), dataNascimento DATE
+                         );""";    
+        stmt.executeUpdate(tableUsers);
+        System.out.println("Tabela criada");
+    };
 }
