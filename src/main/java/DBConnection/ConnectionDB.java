@@ -10,7 +10,7 @@ import java.sql.Statement;
  * @author João Vitor
  */
 public class ConnectionDB {
-    public Connection connDB() throws SQLException{
+    public static Connection connDB() throws SQLException{
         Connection conn = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
