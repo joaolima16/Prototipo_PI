@@ -6,17 +6,29 @@ import Models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserDAO {
     public User addUser(User user){
-         try(Connection conn = ConnectionDB.connDB()){
-             String sql = "INSERT INTO cliente VALUES(joao,13313131,joao@teste,M,31311,30/11/2004)";
-             PreparedStatement pstmt = conn.prepareStatement(sql);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();     
+         try{
+             String sql = "INSERT INTO cliente(nome,cpf,email,sexo,telefone,dataNascimento) VALUES(?,?,?,?,?,?)";
+             
+             PreparedStatement pstmt = ConnectionDB.connDB().prepareStatement(sql);
+             pstmt.setString(1, user.getNome());
+             pstmt.setString(2, user.getCpf());
+             pstmt.setString(3, user.getEmail());
+             pstmt.setString(4, user.getSexo());
+             pstmt.setString(5, user.getTelefone());
+             pstmt.setDate(6, java.sql.Date.valueOf("2022-05-23"));
              pstmt.executeUpdate();
              System.out.println("Registrado!");
          }
          catch(SQLException ex){
-             throw new Error(ex);
+             System.out.println(ex);
          }
         return null;
     };

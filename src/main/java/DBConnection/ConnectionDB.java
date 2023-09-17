@@ -13,7 +13,7 @@ public class ConnectionDB {
     public static Connection connDB() throws SQLException{
         Connection conn = null;
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/pi","root","");
             System.out.println("Conectado");
         }
@@ -28,7 +28,7 @@ public class ConnectionDB {
         
         String tableUsers = """
                     CREATE TABLE IF NOT EXISTS cliente (
-                   id INT PRIMARY KEY NOT NULL, nome VARCHAR(120), cpf  VARCHAR(30) UNIQUE,
+                   id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, nome VARCHAR(120), cpf  VARCHAR(30) UNIQUE,
                    email VARCHAR(100),sexo ENUM('M','F'), telefone VARCHAR(50), dataNascimento DATE
                          );""";    
         stmt.executeUpdate(tableUsers);

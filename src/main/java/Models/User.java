@@ -13,24 +13,30 @@ import java.util.Date;
 public class User {
 
     private String nome;
-    private long cpf;
+    private String cpf;
     private String telefone;
     private String email;
-    private String estadoCivil;
     private Date dataNascimento;
+    private String sexo;
     
-    public User(String nome, long cpf, String telefone, String email, String estadoCivil, Date dataNascimento) {
+    public User(String nome, String cpf, String telefone, String email, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
-        this.estadoCivil = estadoCivil;
+        this.sexo = sexo;
         this.dataNascimento = dataNascimento;
     }
     public User(){
         
     }
-    
+        public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
     public String getNome() {
         return nome;
     }
@@ -39,11 +45,11 @@ public class User {
         this.nome = nome;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -61,14 +67,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
     }
 
     public Date getDataNascimento() {
