@@ -12,8 +12,7 @@ import java.util.Date;
 
 public class UserDAO {
     public User addUser(User user){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();     
+
          try{
              String sql = "INSERT INTO cliente(nome,cpf,email,sexo,telefone,dataNascimento) VALUES(?,?,?,?,?,?)";
              
@@ -23,7 +22,8 @@ public class UserDAO {
              pstmt.setString(3, user.getEmail());
              pstmt.setString(4, user.getSexo());
              pstmt.setString(5, user.getTelefone());
-             pstmt.setDate(6, java.sql.Date.valueOf("2022-05-23"));
+             pstmt.setDate(6, (java.sql.Date) java.sql.Date.from(user.getDataNascimento().toInstant()));
+
              pstmt.executeUpdate();
              System.out.println("Registrado!");
          }
