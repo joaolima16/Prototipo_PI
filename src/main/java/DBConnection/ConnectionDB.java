@@ -18,8 +18,7 @@ public class ConnectionDB {
             System.out.println("Conectado");
         }
         catch(ClassNotFoundException ex){
-            System.out.println("Erro ao criar conexão");
-            System.out.println(ex);
+            throw new Error(ex);
         }
         return conn;
     }
