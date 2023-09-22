@@ -54,13 +54,13 @@ public class UserDAO {
     ;
    public boolean updateUser(User user, String cpf) {
         try {
-            String sql = "UPDATE cliente SET nome =?,cpf =?,email =?,telefone =?,dataNascimento =? WHERE cpf = ?";
+            String sql = "UPDATE cliente SET nome =?, cpf = ?, email = ?, telefone = ?, dataNascimento = ? WHERE cpf = ?";
             PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
             stmt.setString(1, user.getNome());
             stmt.setString(2, user.getCpf());
             stmt.setString(3, user.getEmail());
             stmt.setString(4, user.getTelefone());
-            stmt.setDate(5, java.sql.Date.valueOf(user.getDataNascimento()));
+            stmt.setString(5, user.getDataNascimento());
             stmt.setString(6, cpf);
             stmt.executeUpdate();
             System.out.println("Usuário atualizado");
@@ -68,6 +68,21 @@ public class UserDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
             return false;
+        }
+    }
+
+    public boolean deleteUser(String cpf) {
+        try {
+            String sql = "DELETE cliente WHERE cpf = ? ";
+            PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
+            stmt.setString(1, cpf);
+            stmt.executeUpdate();
+            System.out.println("Usuário deletado");
+            return true;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return false;
+
         }
 
     }
