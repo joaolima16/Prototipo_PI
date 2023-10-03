@@ -53,8 +53,7 @@ public class UserDAO {
         }
     }
 
-    ;
-   public boolean updateUser(User user, String cpf) {
+    public boolean updateUser(User user, String cpf) {
         try {
             String sql = "UPDATE cliente SET nome =?, cpf = ?, email = ?, telefone = ?, dataNascimento = ? WHERE cpf = ?";
             PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
@@ -70,6 +69,24 @@ public class UserDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
             return false;
+        }
+    }
+
+    public String loginUser(String email, String password) {
+        try {
+            String sql = "SELECT * FROM cliente WHERE email = ? AND senha = ?";
+
+            PreparedStatement stmt = ConnectionDB.connDB().prepareCall(sql);
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+               return "Usuário encontrado";
+            }
+            return "Usuário não encontrado";
+        } catch (SQLException ex) {
+            throw new Error(ex);
+
         }
     }
 
