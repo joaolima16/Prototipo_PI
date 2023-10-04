@@ -1,12 +1,14 @@
+com\mycompany\prototipo_pi\Prototipo_PI.class
+DBConnection\ConnectionDB.class
 Views\Login$1.class
 Views\UpdateUser$2.class
 Views\Login.class
 Views\Register.class
 Models\User.class
-com\mycompany\prototipo_pi\Prototipo_PI.class
-DBConnection\ConnectionDB.class
 Views\UpdateUser.class
 Views\Register$1.class
+Views\Login$3.class
+Views\Login$2.class
 DAO\UserDAO.class
 Views\UpdateUser$1.class
 Views\Register$2.class

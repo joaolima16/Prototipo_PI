@@ -12,6 +12,7 @@ public class UpdateUser extends javax.swing.JFrame {
 
     UserDAO userDao = new UserDAO();
     private String cpf;
+    private String sexo;
 
     public UpdateUser() throws SQLException {
         initComponents();
@@ -240,11 +241,19 @@ public class UpdateUser extends javax.swing.JFrame {
     }
 
     public boolean updateUser() {
+        if(JtbMasc.isSelected()){
+           sexo = "M";
+        }
+        else{
+            sexo = "F";
+        }
+        
         User user = new User();
         user.setNome(JtfNome.getText());
         user.setCpf(JtfCpf.getText());
         user.setEmail(JtfEmail.getText());
         user.setTelefone(JtfTel.getText());
+        user.setSexo(sexo);
         user.setDataNascimento(JtfData.getText());
         boolean _user = userDao.updateUser(user, this.cpf);
         return _user; 
