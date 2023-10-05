@@ -55,15 +55,14 @@ public class UserDAO {
 
     public boolean updateUser(User user, String cpf) {
         try {
-            String sql = "UPDATE cliente SET nome =?, cpf = ?, email = ?, telefone = ?, dataNascimento = ?, sexo = ?  WHERE cpf = ?";
+            String sql = "UPDATE cliente SET nome =?, cpf = ?, email = ?, telefone = ?, dataNascimento = ? WHERE cpf = ?";
             PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
             stmt.setString(1, user.getNome());
             stmt.setString(2, user.getCpf());
             stmt.setString(3, user.getEmail());
             stmt.setString(4, user.getTelefone());
             stmt.setString(5, user.getDataNascimento());
-            stmt.setString(6, user.getSexo());
-            stmt.setString(7, cpf);
+            stmt.setString(6, cpf);
             stmt.executeUpdate();
             System.out.println("Usuário atualizado");
             return true;
