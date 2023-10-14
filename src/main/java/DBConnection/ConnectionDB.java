@@ -14,7 +14,7 @@ public class ConnectionDB {
         Connection conn = null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/pi_2","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/pi","root","");
             System.out.println("Conectado");
         }
         catch(ClassNotFoundException ex){
