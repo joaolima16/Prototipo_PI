@@ -50,24 +50,28 @@ public class Register extends javax.swing.JFrame {
         jPanel1.setName("Registrar Usuário"); // NOI18N
 
         JtfNome.setBackground(new java.awt.Color(153, 153, 153));
+        JtfNome.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome");
 
         JtfCpf.setBackground(new java.awt.Color(153, 153, 153));
+        JtfCpf.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CPF");
 
         JtfEmail.setBackground(new java.awt.Color(153, 153, 153));
+        JtfEmail.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email");
 
         JtfTel.setBackground(new java.awt.Color(153, 153, 153));
+        JtfTel.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,6 +97,7 @@ public class Register extends javax.swing.JFrame {
         jrbFem.setText("F");
 
         JtfData.setBackground(new java.awt.Color(153, 153, 153));
+        JtfData.setForeground(new java.awt.Color(255, 255, 255));
         try {
             JtfData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-##-##")));
         } catch (java.text.ParseException ex) {
@@ -113,7 +118,7 @@ public class Register extends javax.swing.JFrame {
         jLabel7.setText("Senha");
 
         JpfSenha.setBackground(new java.awt.Color(153, 153, 153));
-        JpfSenha.setForeground(new java.awt.Color(153, 153, 153));
+        JpfSenha.setForeground(new java.awt.Color(255, 255, 255));
 
         JtbSenha.setText("👁️​");
         JtbSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -255,6 +260,10 @@ public class Register extends javax.swing.JFrame {
         }else if (JpfSenha.getText().length() <= 6) {
                 JOptionPane.showMessageDialog(null, "Sua senha precisa ter pelo menos 6 caracteres");
                 return false;
+        }
+        else if(JtfCpf.getText().length() <11){
+            JOptionPane.showMessageDialog(null, "O CPF Precisa ter 11 digitos");
+            return false;
         }
         return true;
     }
