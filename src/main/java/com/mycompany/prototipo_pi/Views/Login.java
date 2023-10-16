@@ -24,11 +24,11 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         JbtnLogin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         Jtbsenha = new javax.swing.JToggleButton();
         JpfSenha = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,17 +58,6 @@ public class Login extends javax.swing.JFrame {
         JbtnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JbtnLoginActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Não possui cadastro? Registre-se");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -106,6 +95,16 @@ public class Login extends javax.swing.JFrame {
         JpfSenha.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
         JpfSenha.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Não possui cadastro? Registre-se");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,8 +132,8 @@ public class Login extends javax.swing.JFrame {
                         .addGap(194, 194, 194)
                         .addComponent(JbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -156,8 +155,8 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -186,7 +185,7 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -216,13 +215,6 @@ public class Login extends javax.swing.JFrame {
       this.dispose();
     
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Register registerForm = new Register();
-        registerForm.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void JtbsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtbsenhaActionPerformed
         if (Jtbsenha.isSelected()) {
             JpfSenha.setEchoChar((char) 0);
@@ -231,6 +223,12 @@ public class Login extends javax.swing.JFrame {
 
         }        // TODO add your handling code here:
     }//GEN-LAST:event_JtbsenhaActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        Register registerForm = new Register();
+        registerForm.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -269,7 +267,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField JpfSenha;
     private javax.swing.JToggleButton Jtbsenha;
     private javax.swing.JTextField JtxEmail;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

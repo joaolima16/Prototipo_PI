@@ -13,7 +13,6 @@ public class UserDAO {
         try {
             ResultSet userExists = findUser(user.getCpf());
             if (userExists == null) {
-                System.out.println(user.getPassword());
                 String sql = "INSERT INTO cliente(nome,cpf,email,sexo,telefone,senha, dataNascimento) VALUES(?,?,?,?,?,?,?)";
                 PreparedStatement pstmt = ConnectionDB.connDB().prepareStatement(sql);
                 pstmt.setString(1, user.getNome());
