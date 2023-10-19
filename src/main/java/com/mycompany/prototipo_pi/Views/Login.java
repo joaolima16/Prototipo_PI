@@ -38,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         JtxEmail.setBackground(new java.awt.Color(102, 102, 102));
-        JtxEmail.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
+        JtxEmail.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         JtxEmail.setForeground(new java.awt.Color(255, 255, 255));
         JtxEmail.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -72,16 +72,16 @@ public class Login extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel6)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(20, 20, 20))
+                .addGap(21, 21, 21))
         );
 
         Jtbsenha.setText("👁️‍️");
@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         JpfSenha.setBackground(new java.awt.Color(102, 102, 102));
-        JpfSenha.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
+        JpfSenha.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         JpfSenha.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -129,11 +129,11 @@ public class Login extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Jtbsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(JbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabel1)))
+                        .addGap(176, 176, 176)
+                        .addComponent(JbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
