@@ -9,7 +9,10 @@ com\mycompany\prototipo_pi\Views\Products$6.class
 com\mycompany\prototipo_pi\Views\RegisterUser$1.class
 com\mycompany\prototipo_pi\Views\Login.class
 com\mycompany\prototipo_pi\Views\Products$9.class
+com\mycompany\prototipo_pi\Models\Produto.class
 com\mycompany\prototipo_pi\Views\RegisterUser$4.class
+com\mycompany\prototipo_pi\component\mainPanel.class
+com\mycompany\prototipo_pi\component\Item.class
 com\mycompany\prototipo_pi\Views\Products$8.class
 com\mycompany\prototipo_pi\Views\Clients.class
 com\mycompany\prototipo_pi\Views\RegisterUser$5.class
@@ -22,7 +25,6 @@ com\mycompany\prototipo_pi\Views\RegisterUser$10.class
 com\mycompany\prototipo_pi\Views\UpdateUser$7.class
 com\mycompany\prototipo_pi\Views\UpdateUser$4.class
 com\mycompany\prototipo_pi\Views\Clients$5.class
-com\mycompany\prototipo_pi\Views\Home$2.class
 com\mycompany\prototipo_pi\Views\Products$5.class
 com\mycompany\prototipo_pi\Views\RegisterUser.class
 com\mycompany\prototipo_pi\Views\Products.class
@@ -41,12 +43,11 @@ com\mycompany\prototipo_pi\Views\RegisterUser$11.class
 com\mycompany\prototipo_pi\Views\Home.class
 com\mycompany\prototipo_pi\Views\UpdateUser$6.class
 com\mycompany\prototipo_pi\Views\Clients$4.class
-com\mycompany\prototipo_pi\Views\Home$1.class
 DBConnection\ConnectionDB.class
-com\mycompany\prototipo_pi\Views\Home$3.class
 com\mycompany\prototipo_pi\Views\RegisterUser$3.class
 com\mycompany\prototipo_pi\Views\Products$3.class
 com\mycompany\prototipo_pi\Views\UpdateUser$2.class
 com\mycompany\prototipo_pi\DAO\UserDAO.class
+com\mycompany\prototipo_pi\Picture\PictureBox.class
 com\mycompany\prototipo_pi\Models\productTableModel.class
 com\mycompany\prototipo_pi\Views\Login$3.class

@@ -165,7 +165,6 @@ public class Clients extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnExcActionPerformed
 
     private void jBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddActionPerformed
-        // TODO add your handling code here:
         RegisterUser registerForm = new RegisterUser();
         registerForm.setVisible(true);
     }//GEN-LAST:event_jBtnAddActionPerformed
