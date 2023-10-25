@@ -51,7 +51,7 @@ public class Item extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Preço: R$ 750,00");
 
-        pictureBox2.setImage(new javax.swing.ImageIcon(getClass().getResource("/Assets/airmax.jpg"))); // NOI18N
+        pictureBox2.setImage(new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\Assets\\airmax.jpg"));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
