@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.prototipo_pi.component;
 
 import com.mycompany.prototipo_pi.Models.Produto;
 import java.awt.Graphics;
 
-/**
- *
- * @author João Vitor
- */
 public class Item extends javax.swing.JPanel {
 
     /**
@@ -29,7 +21,7 @@ public class Item extends javax.swing.JPanel {
 
     @Override
     public void paint(Graphics g) {
-        super.paint(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.paint(g); 
     }
 
     @SuppressWarnings("unchecked")
@@ -50,8 +42,6 @@ public class Item extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Preço: R$ 750,00");
-
-        pictureBox2.setImage(new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\Assets\\airmax.jpg"));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,6 +100,6 @@ public class Item extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void add(Produto produto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

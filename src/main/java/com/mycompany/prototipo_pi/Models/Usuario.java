@@ -8,16 +8,15 @@ public class Usuario {
     private String email;
     private String dataNascimento;
     private String sexo;
-    private String senha;
+
     private String estadoCivil;
-    public Usuario(String nome, String cpf, String telefone, String email, String sexo, String dataNascimento, String senha, String estadoCivil) {
+    public Usuario(String nome, String cpf, String telefone, String email, String sexo, String dataNascimento, String estadoCivil) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
-        this.senha = senha;
         this.estadoCivil = estadoCivil;
     }
     public Usuario(){
@@ -68,13 +67,6 @@ public class Usuario {
 
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
      public String getEstadoCivil() {
         return estadoCivil;
