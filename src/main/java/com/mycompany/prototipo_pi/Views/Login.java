@@ -4,7 +4,7 @@ import com.mycompany.prototipo_pi.DAO.UserDAO;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-    Clients clientForm = new Clients();
+    Venda homeForm = new Venda();
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -190,7 +190,7 @@ public class Login extends javax.swing.JFrame {
       // String response = userDao.loginUser(JtxEmail.getText(),JpfSenha.getText());
       
       JOptionPane.showMessageDialog(null, "Usuário logado");
-      clientForm.setVisible(true);
+      homeForm.setVisible(true);
       this.dispose();
     
     }

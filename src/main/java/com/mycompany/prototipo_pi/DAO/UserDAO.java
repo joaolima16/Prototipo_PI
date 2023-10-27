@@ -20,8 +20,7 @@ public class UserDAO {
                 pstmt.setString(3, user.getEmail());
                 pstmt.setString(4, user.getSexo());
                 pstmt.setString(5, user.getTelefone());
-                pstmt.setString(6, user.getSenha());
-                pstmt.setDate(7, java.sql.Date.valueOf(user.getDataNascimento()));
+                pstmt.setDate(6, java.sql.Date.valueOf(user.getDataNascimento()));
                 pstmt.executeUpdate();
                 System.out.println("Registrado!");
                 return user;

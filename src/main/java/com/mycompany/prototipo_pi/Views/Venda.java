@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.prototipo_pi.Views;
 
-/**
- *
- * @author João Vitor
- */
-public class Venda extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Venda
-     */
+public class Venda extends javax.swing.JFrame {
+    Products productForm = new Products();
     public Venda() {
         initComponents();
     }
@@ -73,6 +64,12 @@ public class Venda extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Produtos");
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Venda.this.mouseClicked(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Microsoft YaHei UI Light", 3, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,7 +103,6 @@ public class Venda extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 0));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("JKMRV Imports");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -338,6 +334,11 @@ public class Venda extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClicked
+        productForm.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mouseClicked
 
     /**
      * @param args the command line arguments
