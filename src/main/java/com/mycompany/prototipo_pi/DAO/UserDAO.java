@@ -13,14 +13,20 @@ public class UserDAO {
         try {
             ResultSet userExists = findUser(user.getCpf());
             if (userExists == null) {
-                String sql = "INSERT INTO cliente(nome,cpf,email,sexo,telefone,senha, dataNascimento) VALUES(?,?,?,?,?,?,?)";
+                String sql = "INSERT INTO cliente(nome,cpf,email,sexo,estado_civil, telefone, dataNascimento, cep, bairro, logradouro, cidade, numero) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement pstmt = ConnectionDB.connDB().prepareStatement(sql);
                 pstmt.setString(1, user.getNome());
                 pstmt.setString(2, user.getCpf());
                 pstmt.setString(3, user.getEmail());
                 pstmt.setString(4, user.getSexo());
-                pstmt.setString(5, user.getTelefone());
-                pstmt.setDate(6, java.sql.Date.valueOf(user.getDataNascimento()));
+                pstmt.setString(5, user.getEstadoCivil());
+                pstmt.setString(6, user.getTelefone());
+                pstmt.setDate(7, java.sql.Date.valueOf(user.getDataNascimento()));
+                pstmt.setString(8, user.getCep());
+                pstmt.setString(9, user.getBairro());
+                pstmt.setString(10, user.getLogradouro());
+                pstmt.setString(11, user.getCidade());
+                pstmt.setString(12, user.getNumero());
                 pstmt.executeUpdate();
                 System.out.println("Registrado!");
                 return user;
@@ -79,7 +85,7 @@ public class UserDAO {
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-               return "Usuário encontrado";
+                return "Usuário encontrado";
             }
             return "Usuário não encontrado";
         } catch (SQLException ex) {

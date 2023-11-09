@@ -48,14 +48,16 @@ public class RegisterUser extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jtfSolt = new javax.swing.JRadioButton();
         jtfCas = new javax.swing.JRadioButton();
-        JtfTel1 = new javax.swing.JTextField();
+        JtfCidade = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        JtfTel2 = new javax.swing.JTextField();
+        JtfCep = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        JtfTel3 = new javax.swing.JTextField();
+        JtfNumero = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        JtfTel4 = new javax.swing.JTextField();
+        JtfLogra = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        JtfBairro = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -198,12 +200,12 @@ public class RegisterUser extends javax.swing.JFrame {
         jtfCas.setForeground(new java.awt.Color(255, 255, 255));
         jtfCas.setText("Casado");
 
-        JtfTel1.setBackground(new java.awt.Color(153, 153, 153));
-        JtfTel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        JtfTel1.setForeground(new java.awt.Color(255, 255, 255));
-        JtfTel1.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtfCidade.setBackground(new java.awt.Color(153, 153, 153));
+        JtfCidade.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        JtfCidade.setForeground(new java.awt.Color(255, 255, 255));
+        JtfCidade.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                JtfTel1KeyTyped(evt);
+                JtfCidadeKeyTyped(evt);
             }
         });
 
@@ -211,25 +213,25 @@ public class RegisterUser extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Cidade");
 
-        JtfTel2.setBackground(new java.awt.Color(153, 153, 153));
-        JtfTel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        JtfTel2.setForeground(new java.awt.Color(255, 255, 255));
-        JtfTel2.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtfCep.setBackground(new java.awt.Color(153, 153, 153));
+        JtfCep.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        JtfCep.setForeground(new java.awt.Color(255, 255, 255));
+        JtfCep.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                JtfTel2KeyTyped(evt);
+                JtfCepKeyTyped(evt);
             }
         });
 
         jLabel11.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Rua");
+        jLabel11.setText("CEP");
 
-        JtfTel3.setBackground(new java.awt.Color(153, 153, 153));
-        JtfTel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        JtfTel3.setForeground(new java.awt.Color(255, 255, 255));
-        JtfTel3.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtfNumero.setBackground(new java.awt.Color(153, 153, 153));
+        JtfNumero.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        JtfNumero.setForeground(new java.awt.Color(255, 255, 255));
+        JtfNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                JtfTel3KeyTyped(evt);
+                JtfNumeroKeyTyped(evt);
             }
         });
 
@@ -237,18 +239,31 @@ public class RegisterUser extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nº");
 
-        JtfTel4.setBackground(new java.awt.Color(153, 153, 153));
-        JtfTel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        JtfTel4.setForeground(new java.awt.Color(255, 255, 255));
-        JtfTel4.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtfLogra.setBackground(new java.awt.Color(153, 153, 153));
+        JtfLogra.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        JtfLogra.setForeground(new java.awt.Color(255, 255, 255));
+        JtfLogra.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                JtfTel4KeyTyped(evt);
+                JtfLograKeyTyped(evt);
             }
         });
 
         jLabel13.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Logradouro");
+
+        jLabel14.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Bairro");
+
+        JtfBairro.setBackground(new java.awt.Color(153, 153, 153));
+        JtfBairro.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        JtfBairro.setForeground(new java.awt.Color(255, 255, 255));
+        JtfBairro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JtfBairroKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -270,33 +285,46 @@ public class RegisterUser extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JtfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jrbMasc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrbFem))
-                            .addComponent(jLabel6)
-                            .addComponent(JtfTel2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
+                            .addComponent(JtfCep, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JtfBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JtfTel4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jtfSolt)
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JtfLogra, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JtfCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(JbnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jtfCas)
                                 .addGap(18, 18, 18)
-                                .addComponent(jtfCas))
-                            .addComponent(JbnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JtfTel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                                .addComponent(jtfSolt)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(JtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JtfTel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(JtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JtfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jrbFem)
+                                .addGap(18, 18, 18)
+                                .addComponent(jrbMasc)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -326,7 +354,7 @@ public class RegisterUser extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JtfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JtfTel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(JtfCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -336,34 +364,38 @@ public class RegisterUser extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JtfTel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(JtfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(JtfTel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JtfLogra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(JtfTel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(JtfCep, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jrbFem)
                             .addComponent(jrbMasc)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtfSolt)
-                            .addComponent(jtfCas))))
-                .addGap(39, 39, 39)
+                            .addComponent(JtfBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfCas)
+                            .addComponent(jtfSolt))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(JbnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -374,9 +406,7 @@ public class RegisterUser extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -390,48 +420,29 @@ public class RegisterUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Para realizar o cadastro preencha todos os campos");
             return false;
 
-        } 
-        } else if (JtfCpf.getText().length() < 11) {
-            JOptionPane.showMessageDialog(null, "O CPF Precisa ter 11 digitos");
-            return false;
         }
-        return true;
+    }
+
+    else if (JtfCpf.getText ()
+
+    
+        .length() < 11) {
+            JOptionPane.showMessageDialog(null, "O CPF Precisa ter 11 digitos");
+        return false;
+    }
+
+
+return true;
     }
 
     private void JbnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbnCadastroActionPerformed
         boolean validarDados = ValidarCampos();
         if (validarDados == true) {
-            // cadastrarUsuario();
-            cadastrarUsuarioTabela();
+             cadastrarUsuario();
         }
 
     }//GEN-LAST:event_JbnCadastroActionPerformed
-    private void cadastrarUsuarioTabela() {
 
-        if (jrbFem.isSelected()) {
-            sexo = "F";
-        } else {
-            sexo = "M";
-        }
-        if(jtfSolt.isSelected()){
-            estado = "solteiro";
-        }
-        else{
-            estado =  "casado";
-        }
-        
-        Usuario user = new Usuario(JtfNome.getText(),
-                JtfCpf.getText(),
-                JtfTel.getText(),
-                JtfEmail.getText(),
-                sexo,
-                JtfData.getText(),
-                estado
-        );
-        Clients clientForm = new Clients(user);
-        clientForm.setVisible(true);
-        this.dispose();
-    }
     private void JtfDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtfDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JtfDataActionPerformed
@@ -471,14 +482,14 @@ public class RegisterUser extends javax.swing.JFrame {
         PlainDocument document = (PlainDocument) textField.getDocument();
         document.setDocumentFilter(new DocumentFilter() {
             @Override
-            public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
                 if (!string.matches(".*\\d.*")) {
                     super.insertString(fb, offset, string, attr);
                 }
             }
 
             @Override
-            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
                 if (!text.matches(".*\\d.*")) {
                     super.replace(fb, offset, length, text, attrs);
                 }
@@ -496,21 +507,25 @@ public class RegisterUser extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JtfNomeKeyTyped
 
-    private void JtfTel1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfTel1KeyTyped
+    private void JtfCidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfCidadeKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_JtfTel1KeyTyped
+    }//GEN-LAST:event_JtfCidadeKeyTyped
 
-    private void JtfTel2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfTel2KeyTyped
+    private void JtfCepKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfCepKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_JtfTel2KeyTyped
+    }//GEN-LAST:event_JtfCepKeyTyped
 
-    private void JtfTel3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfTel3KeyTyped
+    private void JtfNumeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfNumeroKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_JtfTel3KeyTyped
+    }//GEN-LAST:event_JtfNumeroKeyTyped
 
-    private void JtfTel4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfTel4KeyTyped
+    private void JtfLograKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfLograKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_JtfTel4KeyTyped
+    }//GEN-LAST:event_JtfLograKeyTyped
+
+    private void JtfBairroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtfBairroKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JtfBairroKeyTyped
     private void cadastrarUsuario() {
         try {
             if (jrbFem.isSelected()) {
@@ -529,10 +544,12 @@ public class RegisterUser extends javax.swing.JFrame {
                     JtfCpf.getText(),
                     JtfTel.getText(),
                     JtfEmail.getText(),
+                    JtfData.getText(),    
                     sexo,
-        JtfData.getText(),
-                  
-                    estado
+                    JtfCep.getText(),
+                    JtfNumero.getText(),
+                    JtfBairro.getText()
+                     
             );
 
             Usuario userdao = userDao.addUser(user);
@@ -557,16 +574,28 @@ public class RegisterUser extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegisterUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegisterUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegisterUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegisterUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterUser.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(RegisterUser.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(RegisterUser.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(RegisterUser.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -581,15 +610,16 @@ public class RegisterUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JbnCadastro;
+    private javax.swing.JTextField JtfBairro;
+    private javax.swing.JTextField JtfCep;
+    private javax.swing.JTextField JtfCidade;
     private javax.swing.JTextField JtfCpf;
     private javax.swing.JFormattedTextField JtfData;
     private javax.swing.JTextField JtfEmail;
+    private javax.swing.JTextField JtfLogra;
     private javax.swing.JTextField JtfNome;
+    private javax.swing.JTextField JtfNumero;
     private javax.swing.JTextField JtfTel;
-    private javax.swing.JTextField JtfTel1;
-    private javax.swing.JTextField JtfTel2;
-    private javax.swing.JTextField JtfTel3;
-    private javax.swing.JTextField JtfTel4;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JLabel jLabel1;
@@ -597,6 +627,7 @@ public class RegisterUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

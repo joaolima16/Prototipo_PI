@@ -34,6 +34,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(31500, 31500));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         JtxEmail.setBackground(new java.awt.Color(102, 102, 102));
         JtxEmail.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
