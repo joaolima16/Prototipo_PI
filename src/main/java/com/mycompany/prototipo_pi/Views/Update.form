@@ -140,7 +140,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="JtbSolt" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="JtfCas" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JtbCas" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jButton1" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
                           </Group>
@@ -231,7 +231,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="JtfNumero" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="JtfCas" alignment="3" max="32767" attributes="0"/>
+                              <Component id="JtbCas" alignment="3" max="32767" attributes="0"/>
                               <Component id="JtbSolt" alignment="3" max="32767" attributes="0"/>
                               <Component id="JtbMasc" alignment="3" max="32767" attributes="0"/>
                               <Component id="JtbFem" alignment="3" max="32767" attributes="0"/>
@@ -357,7 +357,7 @@
             <Property name="text" type="java.lang.String" value="Estado Civil"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="JtfCas">
+        <Component class="javax.swing.JRadioButton" name="JtbCas">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="buttonGroup1"/>

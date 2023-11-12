@@ -5,11 +5,11 @@ import com.mycompany.prototipo_pi.Models.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class UserDAO {
 
     public User addUser(User user) {
-
         try {
             ResultSet userExists = findUser(user.getCpf());
             if (userExists == null) {
@@ -58,27 +58,33 @@ public class UserDAO {
 
     public boolean updateUser(User user, String cpf) {
         try {
-            String sql = "UPDATE cliente SET nome =?, cpf = ?, telefone = ?, email = ?, "
-                    + "dataNascimento = ?, cep = ?,bairro = ?,cidade = ?, "
-                    + "logradouro = ?, numero = ?,sexo = ?, "
-                    + "estado_civil = ?  WHERE cpf = ?";
-            PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
-            stmt.setString(1, user.getNome());
-            stmt.setString(2, user.getCpf());
-            stmt.setString(3, user.getTelefone());
-            stmt.setString(4, user.getEmail());
-            stmt.setDate(5, new java.sql.Date(user.getDataNascimento().getTime()));
-            stmt.setString(6, user.getCep());
-            stmt.setString(7, user.getBairro());
-            stmt.setString(8, user.getCidade());
-            stmt.setString(9, user.getLogradouro());
-            stmt.setString(10, user.getNumero());
-            stmt.setString(11, user.getSexo());
-            stmt.setString(12, user.getEstadoCivil());
-            stmt.setString(13, cpf);
-            stmt.executeUpdate();
-            System.out.println("Usuário atualizado");
-            return true;
+            ResultSet userExists = findUser(user.getCpf());
+            if (userExists == null) {
+                String sql = "UPDATE cliente SET nome =?, cpf = ?, telefone = ?, email = ?, "
+                        + "dataNascimento = ?, cep = ?,bairro = ?,cidade = ?, "
+                        + "logradouro = ?, numero = ?,sexo = ?, "
+                        + "estado_civil = ?  WHERE cpf = ?";
+                PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
+                stmt.setString(1, user.getNome());
+                stmt.setString(2, user.getCpf());
+                stmt.setString(3, user.getTelefone());
+                stmt.setString(4, user.getEmail());
+                stmt.setDate(5, new java.sql.Date(user.getDataNascimento().getTime()));
+                stmt.setString(6, user.getCep());
+                stmt.setString(7, user.getBairro());
+                stmt.setString(8, user.getCidade());
+                stmt.setString(9, user.getLogradouro());
+                stmt.setString(10, user.getNumero());
+                stmt.setString(11, user.getSexo());
+                stmt.setString(12, user.getEstadoCivil());
+                stmt.setString(13, cpf);
+                stmt.executeUpdate();
+                System.out.println("Usuário atualizado");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "CPF já existente na base de dados");
+                return false;
+            }
         } catch (SQLException ex) {
             System.out.println(ex);
             return false;
@@ -98,9 +104,9 @@ public class UserDAO {
     }
 
     public String loginUser(String email, String password) {
+        String sql = "SELECT * FROM cliente WHERE email = ? AND senha = ?";
+       
         try {
-            String sql = "SELECT * FROM cliente WHERE email = ? AND senha = ?";
-
             PreparedStatement stmt = ConnectionDB.connDB().prepareCall(sql);
             stmt.setString(1, email);
             stmt.setString(2, password);
@@ -111,8 +117,7 @@ public class UserDAO {
             return "Usuário não encontrado";
         } catch (SQLException ex) {
             throw new Error(ex);
-
-        }
+        } 
     }
 
     public boolean deleteUser(String cpf) {
@@ -128,6 +133,19 @@ public class UserDAO {
             return false;
 
         }
-
+    }
+    public ResultSet findUsersForNameOrCpf(String value){
+    try{
+        ResultSet rs;
+        String sql = "SELECT id,nome,cpf,email,telefone,dataNascimento FROM cliente WHERE nome LIKE ? OR cpf LIKE ?";
+        PreparedStatement stmt = ConnectionDB.connDB().prepareStatement(sql);
+        stmt.setString(1, "%"+value+"%");
+        stmt.setString(2, "%"+value+"%");
+        rs = stmt.executeQuery();
+        return rs;
+    }
+    catch(SQLException ex){
+        throw new Error(ex);
+    }
     }
 }

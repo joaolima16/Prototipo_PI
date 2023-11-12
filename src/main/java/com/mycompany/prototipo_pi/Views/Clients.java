@@ -11,20 +11,21 @@ public class Clients extends javax.swing.JFrame {
     Products productForm = new Products();
     userTableModel _userTableModel = new userTableModel();
     UserDAO _userDao = new UserDAO();
-    
+
     public Clients() {
         initComponents();
         jtUsuarios.setModel(_userTableModel);
         fillTable();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        JtfBusca = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtUsuarios = new javax.swing.JTable();
         jBtnExc = new javax.swing.JButton();
@@ -36,33 +37,43 @@ public class Clients extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 0));
 
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JtfBusca.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Lista De Clientes");
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(296, 296, 296))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(296, 296, 296))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(JtfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JtfBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -162,7 +173,7 @@ public class Clients extends javax.swing.JFrame {
                 _user.setTelefone(rs.getString(5));
                 _user.setDataNascimento(rs.getDate(6));
                 _userTableModel.addRow(_user);
-            }    
+            }
         } catch (SQLException ex) {
             throw new Error(ex);
         }
@@ -170,9 +181,8 @@ public class Clients extends javax.swing.JFrame {
     private void jBtnExcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcActionPerformed
         if (jtUsuarios.getSelectedRow() != -1) {
             _userTableModel.removeRow(jtUsuarios.getSelectedRow());
-            
+
         }
-        
     }//GEN-LAST:event_jBtnExcActionPerformed
 
     private void jBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddActionPerformed
@@ -181,19 +191,48 @@ public class Clients extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnAddActionPerformed
 
     private void jBtnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAltActionPerformed
-        
-        Update updateUserForm = new Update("teste");
-        updateUserForm.setVisible(true);
-        this.dispose();
+        if (jtUsuarios.getSelectedRow() != -1) {
+            Object cpf = _userTableModel.getValueAt(jtUsuarios.getSelectedRow(), 1);
+            Update updateUserForm = new Update(cpf.toString());
+            updateUserForm.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jBtnAltActionPerformed
 
     private void jbtnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnListActionPerformed
         productForm.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnListActionPerformed
-    
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        filterUsers();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void filterUsers() {
+        ResultSet rs = _userDao.findUsersForNameOrCpf(JtfBusca.getText());
+        clearTable();
+        try {
+            while (rs.next()) {
+                 User _user = new User();
+                _user.setNome(rs.getString(2));
+                _user.setCpf(rs.getString(3));
+                _user.setEmail(rs.getString(4));
+                _user.setTelefone(rs.getString(5));
+                _user.setDataNascimento(rs.getDate(6));
+                _userTableModel.addRow(_user);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    private void clearTable() {
+        int rowCount = _userTableModel.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            _userTableModel.removeRow(i);
+        }
+    }
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+       
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -216,7 +255,7 @@ public class Clients extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Clients().setVisible(true);
@@ -225,13 +264,14 @@ public class Clients extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JtfBusca;
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnAlt;
     private javax.swing.JButton jBtnExc;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtnList;
     private javax.swing.JTable jtUsuarios;
     // End of variables declaration//GEN-END:variables

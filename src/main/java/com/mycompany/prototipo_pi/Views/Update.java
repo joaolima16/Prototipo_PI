@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JTextField;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -27,11 +25,13 @@ public class Update extends javax.swing.JFrame {
 
     public Update() {
         initComponents();
-        showInformations("23136137173");
+        showInformations("53182318131");
+        
     }
 
     public Update(String cpf) {
-        showInformations("54462468880");
+        initComponents();
+        showInformations(cpf);
     }
 
     @SuppressWarnings("unchecked")
@@ -64,7 +64,7 @@ public class Update extends javax.swing.JFrame {
         JtfNumero = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        JtfCas = new javax.swing.JRadioButton();
+        JtbCas = new javax.swing.JRadioButton();
         JtbSolt = new javax.swing.JRadioButton();
         JtbMasc = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
@@ -186,8 +186,8 @@ public class Update extends javax.swing.JFrame {
 
         jLabel11.setText("Estado Civil");
 
-        buttonGroup1.add(JtfCas);
-        JtfCas.setText("Casado");
+        buttonGroup1.add(JtbCas);
+        JtbCas.setText("Casado");
 
         buttonGroup1.add(JtbSolt);
         JtbSolt.setText("Solteiro");
@@ -262,7 +262,7 @@ public class Update extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(JtbSolt)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JtfCas))
+                                .addComponent(JtbCas))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +330,7 @@ public class Update extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JtfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JtfCas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JtbCas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JtbSolt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JtbMasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JtbFem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -361,6 +361,7 @@ public class Update extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         boolean _validarCampos = validarCampos();
         if (_validarCampos != false) {
             boolean _update = updateUser();
@@ -374,8 +375,7 @@ public class Update extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
     private boolean validarCampos() {
-          System.out.println(JtfCpf.getText().length());
-        if (JtfEmail.getText().equals("") || JtfCpf.getText().equals("")
+        if (JtfEmail.getText().equals("") || JtfCpf.getText().replaceAll("[^0-9]", "").equals("")
                 || JtfTel.getText().equals("") || JtfNome.getText().equals("")
                 || JtfData.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Para realizar o cadastro preencha todos os campos");
@@ -441,7 +441,7 @@ public class Update extends javax.swing.JFrame {
         if (estadoCivil.equalsIgnoreCase("solteiro")) {
             JtbSolt.setSelected(true);
         } else {
-            JtbFem.setSelected(true);
+            JtbCas.setSelected(true);
         }
     }
     private void JtfNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JtfNomeFocusGained
@@ -624,11 +624,11 @@ public class Update extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton JtbCas;
     private javax.swing.JRadioButton JtbFem;
     private javax.swing.JRadioButton JtbMasc;
     private javax.swing.JRadioButton JtbSolt;
     private javax.swing.JTextField JtfBairro;
-    private javax.swing.JRadioButton JtfCas;
     private javax.swing.JFormattedTextField JtfCep;
     private javax.swing.JTextField JtfCidade;
     private javax.swing.JFormattedTextField JtfCpf;

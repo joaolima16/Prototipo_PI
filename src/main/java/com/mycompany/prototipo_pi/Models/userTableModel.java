@@ -46,8 +46,8 @@ public class userTableModel extends AbstractTableModel {
     
     }
     public void removeRow(int row){
-        _userDao.deleteUser(this.users.get(row).getCpf());
         this.users.remove(row);
         this.fireTableRowsDeleted(row, row);
     }
+    
 }

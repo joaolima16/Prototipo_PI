@@ -341,6 +341,7 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        validarCheckBox();
         boolean _validarCampos = validarCampos();
         if (_validarCampos != false) {
             registerUser();
@@ -348,9 +349,10 @@ public class Register extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
     private boolean validarCampos() {
-        if (JtfEmail.getText().equals("") || JtfCpf.getText().equals("")
+        if (JtfEmail.getText().equals("") || JtfCpf.getText().replaceAll("[^0-9]", "").equals("")
                 || JtfTel.getText().equals("") || JtfNome.getText().equals("")
-                || JtfData.getText().equals("")) {
+                || JtfData.getText().equals("") || JtfCidade.getText().equals("")
+                || JtfBairro.getText().equals("") || JtfLogra.getText().equals("") || sexo.equals("") || JtfCep.equals("")) {
             JOptionPane.showMessageDialog(null, "Para realizar o cadastro preencha todos os campos");
             return false;
         } else if (JtfCpf.getText().length() < 11) {
@@ -508,7 +510,7 @@ public class Register extends javax.swing.JFrame {
     }
 
     private void registerUser() {
-        validarCheckBox();
+
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date data = format.parse(JtfData.getText());
